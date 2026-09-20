@@ -1,0 +1,34 @@
+# Unreal Engine 5 - standard ignores
+
+# Build / generated
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/*
+!Build/*.uplugin
+!Build/Build.version
+
+# Visual Studio / Rider / IDE
+.vs/
+.idea/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.xcodeproj
+*.xcworkspace
+
+# Generated at runtime / packaging
+*.pdb
+*.exe
+*.dll
+*.log
+
+# Local tooling
+.claude/settings.local.json
