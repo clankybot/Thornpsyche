@@ -7,7 +7,7 @@ warnings.simplefilter("ignore")
 
 ROOT = "/Game/SpikeField"
 TERRAIN_SIZE = 64000.0
-TERRAIN_CELLS = 768   # 4x per axis (16x triangles, ~1.2M tris): 83 uu quads instead of 333 uu. Needs Nanite.
+TERRAIN_CELLS = 192
 SPAWN_CLEAR_RADIUS = 4500.0
 eal = unreal.EditorAssetLibrary
 
@@ -85,9 +85,6 @@ sm = res[0] if isinstance(res, (tuple, list)) else res
 sm.set_material(0, eal.load_asset(ROOT + "/Materials/M_SilverSand"))
 body = sm.get_editor_property("body_setup")
 body.set_editor_property("collision_trace_flag", unreal.CollisionTraceFlag.CTF_USE_COMPLEX_AS_SIMPLE)
-nanite = sm.get_editor_property("nanite_settings")
-nanite.enabled = True   # ~1.2M triangles is only practical with Nanite
-sm.set_editor_property("nanite_settings", nanite)
 sm.modify()
 eal.save_loaded_asset(sm)
 log("SM_DuneTerrain rebuilt: height range %.0f .. %.0f UU (%.0f m of relief)" % (zmin, zmax, (zmax - zmin) / 100.0))
