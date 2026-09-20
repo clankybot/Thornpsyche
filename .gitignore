@@ -32,3 +32,6 @@ Build/*
 
 # Local tooling
 .claude/settings.local.json
+
+# Large imported art pack (contains files over GitHub's 100 MB limit)
+Content/SD_Art/
